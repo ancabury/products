@@ -1,0 +1,30 @@
+- @products.each do |prod|
+  %a{href: "#myModal", "data-toggle" => "modal", "data-name" => "#{prod.name}", "data-desc" => "#{prod.description}", "data-manufacturer" => "#{prod.manufacturer}", "data-price" => "#{prod.price}", "data-quantity" => "#{prod.quantity}", "data-img" => "#{prod.image.url(:medium)}", "data-id" => "#{prod.id}"}
+    .media
+      .media-left
+        %img.media-object{ :alt => prod.name, :src => prod.image.url(:thumb) }/
+      .media-body
+        %h4.media-heading
+          = "#{prod.name}"
+  %br
+
+#myModal.modal.fade{:role => "dialog", :tabindex => "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %h4.modal-title
+      .modal-body
+        .description
+          %p
+        .manufacturer
+          %p
+        .price
+          %p
+        .quantity
+          %p
+        .chart
+
+      .modal-footer
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+        %img.media-object

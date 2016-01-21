@@ -1,0 +1,11 @@
+%nav.navbar.navbar-default.navbar-fixed-top
+  .container
+    .row
+      .col-lg-8.pull-left
+        = link_to 'Home', root_path, class: 'navbar-brand'
+      .col-lg-4.pull-right
+        - if admin_signed_in?
+          = link_to 'Log out', destroy_admin_session_path, :method => :delete, class: 'navbar-brand pull-right'
+        - else
+          = link_to 'Log in', new_admin_session_path, class: 'navbar-brand pull-right'
+ello

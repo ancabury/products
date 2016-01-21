@@ -1,0 +1,5 @@
+.container
+  %h2.span5
+    = "Edit product: #{@product.name}"
+
+  = render partial: 'form', locals: { url:  product_path(@product), method: "update" }

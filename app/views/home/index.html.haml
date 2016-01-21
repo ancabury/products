@@ -1,0 +1,10 @@
+.container
+  %h1
+    = "Hello"
+
+  = search_form_for(@q, url:  root_path ) do |f|
+    .form-inputs
+      = f.text_field :name_or_description_cont, placeholder: "Product", class: "form-control search-engine"
+  %br
+  %br
+  .results

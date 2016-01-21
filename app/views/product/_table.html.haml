@@ -1,0 +1,22 @@
+#table
+  = render partial: 'shared/pagination', locals: { collection: @products }
+  - if @products.any?
+    %table.table.table-bordered.table-hover
+      %thead
+        %tr
+          %th Name
+          %th Description
+          %th Manufacturer
+          %th Price
+          %th Quantity available
+          %th Actions
+      %tbody
+        = render partial: 'product', collection: @products
+      %tfoot
+        %tr
+          %td{colspan: 5}
+            = "Count: #{@products.count}"
+  - else
+    No Products Available
+
+  = render partial: 'shared/pagination', locals: { collection: @products }

@@ -1,0 +1,5 @@
+.container
+  %h2.span5
+    = "New product"
+
+  = render partial: 'form', locals: { url:   product_index_path(@product), method: "create" }

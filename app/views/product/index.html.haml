@@ -1,0 +1,10 @@
+.container
+  %h2.span5
+    List of available products
+  %div.btn-group.pull-right.pull-inline
+    = link_to "Add new product",  new_product_path, class: 'btn btn-large btn-info'
+  .clear
+  %br
+  %br
+  %br
+  = render 'table'
